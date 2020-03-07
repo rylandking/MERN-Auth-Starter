@@ -4,10 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@tailwindcss/ui@latest/dist/tailwind-ui.min.css"
-    />
+    <link rel="stylesheet" href="/public/output.css">
     <title>Cash Camp</title>
   </head>
   <body>
@@ -119,7 +116,7 @@
       </div>
 
       <!-- Static sidebar for desktop -->
-      <div class="hidden md:flex md:flex-shrink-0">
+      <div class="hidden lg:flex lg:flex-shrink-0">
         <div class="flex flex-col w-64 bg-gray-800">
           <div class="h-0 flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
             <div class="flex items-center flex-shrink-0 px-4">
@@ -198,10 +195,11 @@
           x-data
           x-init="$el.focus()"
         >
-          <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 class="text-3xl font-bold text-gray-900">Activity</h1>
-          </div>
-          <div class="max-w-4xl mx-auto px-4 sm:px-6 md:px-8">
+          
+          <div class="max-w-4xl mx-auto px-4 sm:px-6 md:px-32">
+            <div class="max-w-4xl mx-auto">
+              <h1 class="text-3xl font-bold text-gray-900">Activity</h1>
+            </div>
             <!-- Replace with your content -->
             <div class="py-4">
               <div class="bg-white shadow sm:rounded-md">
@@ -211,22 +209,22 @@
                   <!-- Trxn -->
                   <li class="border-t border-gray-200 w-100">
 
-                    <div class="wrapper px-3 pt-2 pb-0 md:px-4 md:pt-4">
+                    <div class="wrapper px-3 pt-2 pb-0 sm:px-4 sm:pt-4">
                       <div class="min-w-0 flex-1 flex">
                         <div class="min-w-0 flex-1 grid grid-cols-2">
                           <!-- Trxn Description -->
                           <div class="block">
-                            <div class="text-xs sm:text-base leading-5 font-semibold text-gray-400">Spending</div>
-                            <div class="flex pb-0 md:mt-1 md:mb-2 text-base sm:text-2xl font-bold leading-5 md:leading-7 text-gray-900">In-N-Out Burger
+                            <div class="text-xs sm:text-sm leading-5 font-medium text-gray-400">Spending</div>
+                            <div class="flex pb-0 md:mt-0 md:mb-0 text-base sm:text-xl font-bold leading-5 sm:leading-7 text-gray-900">In-N-Out Burger
                               
-                              <div class="flex ml-3 hidden">
-                                  <span class="px-3 h-5 md:h-7 text-xs font-semibold rounded-full bg-blue-100 text-blue-600">
+                              <div class="flex ml-3">
+                                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium leading-4 bg-gray-100 text-gray-800">
                                     Split
                                   </span>
                               </div>
                               
                             </div>                            
-                            <div class="flex mt-0 text-xs sm:text-base leading-5 text-gray-400">
+                            <div class="flex mt-0 text-xs sm:text-sm font-light leading-5 text-gray-400">
                               <time datetime="2020-01-07">3/2/2020</time>
                             </div>
                           </div><!-- /End Trxn Description -->
@@ -234,7 +232,7 @@
                           <!-- Amount -->
                           <div class="flex justify-end">
                             <div class="self-center">
-                              <div class="text-2xl md:text-3xl text-black font-extrabold">$12.49
+                              <div class="text-2xl md:text-3xl text-black font-bold">$13
                               </div>
                             </div>
                           </div><!-- /End Amount -->
@@ -244,104 +242,68 @@
                       <!-- Icons -->
                       <div class="py-1 my-0 flex justify-between">
                         <!-- Icon - Income -->
-                        <div class="text-gray-900 hover:text-green-700 text-center p-3 md:p-5 cursor-pointer hover:bg-green-100 rounded-full flex items-center justify-center">
-                          <svg class="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <div class="text-gray-900 text-center p-3 md:p-3 cursor-pointer hover:text-green-700 hover:bg-green-100 active:text-green-700 active:bg-green-100 rounded-full flex items-center justify-center">
+                          <svg class="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
                           </svg>
                         </div>
                         <!-- Icon - Spending -->
-                        <div class="text-gray-900 text-red-700 text-center p-3 md:p-5 cursor-pointer bg-red-100 rounded-full flex items-center justify-center">
-                          <svg class="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <div class="text-gray-900 text-red-700 text-center p-3 md:p-3 cursor-pointer bg-red-100 rounded-full flex items-center justify-center">
+                          <svg class="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6"/>
                           </svg>
                         </div>
-                        <!-- Icon - Boost -->
-                        <div class="text-gray-900 hover:text-orange-400 text-center p-3 md:p-5 cursor-pointer hover:bg-orange-100 rounded-full flex items-center justify-center">
-                          <!-- Hide on xs & sm screens -->
-                          <svg  class="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
-                          </svg>
-                        </div>
-                        <!-- Icon - Split -->
-                        <div class="text-gray-900 hover:text-blue-600 text-center p-3 md:p-5 cursor-pointer hover:bg-blue-100 rounded-full flex items-center justify-center">
-                          <svg class="mr-1 h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
-                          </svg>
-                        </div>
-                        <!-- Icon - Ignore -->
-                        <div class="text-gray-900 hover:text-gray-600 text-center p-3 md:p-5 cursor-pointer hover:bg-gray-200 rounded-full flex items-center justify-center">
-                          <svg class="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"/>
-                          </svg>
-                        </div>
-                      </div><!-- /Emd Icons -->
-                    </div>
-                    
-                  </li><!-- /End Trxn -->
-
-                   <!-- Trxn -->
-                   <li class="border-t border-gray-200 w-100">
-
-                    <div class="wrapper px-3 pt-2 pb-0 md:px-4 md:pt-4">
-                      <div class="min-w-0 flex-1 flex">
-                        <div class="min-w-0 flex-1 grid grid-cols-2">
-                          <!-- Trxn Description -->
-                          <div class="block">
-                            <div class="text-xs sm:text-base leading-5 font-semibold text-gray-400">Income</div>
-                            <div class="flex pb-0 md:mt-1 md:mb-2 text-base sm:text-2xl font-bold leading-5 md:leading-7 text-gray-900">Gusto Paycheck #0014
-                              
-                              <div class="flex ml-3 hidden">
-                                  <span class="px-3 h-5 md:h-7 text-xs font-semibold rounded-full bg-blue-100 text-blue-600">
-                                    Split
-                                  </span>
+                        <!-- Icon - Boost + Boost Popover -->
+                        <div x-data="{ open: false }" @keydown.window.escape="open = false" @click.away="open = false" class="relative inline-block text-right">
+                          <div>
+                            <span class="rounded-md shadow-sm">
+                              <div @click="open = !open" type="button" class="text-gray-900 text-center p-3 md:p-3 cursor-pointer hover:text-orange-400 hover:bg-orange-100 focus:outline-none focus:text-orange-400 focus:bg-orange-100 active:text-orange-400 active:bg-orange-100 rounded-full flex items-center justify-center">
+                                <!-- Bolt Icon -->
+                                <svg class="h-4 w-4 sm:h-5 sm:w-5" viewBox="0 0 20 20" fill="currentColor">
+                                  <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
+                                </svg><!-- /End Bolt Icon -->
                               </div>
-                              
-                            </div>                            
-                            <div class="flex mt-0 text-xs sm:text-base leading-5 text-gray-400">
-                              <time datetime="2020-01-07">2/29/2020</time>
-                            </div>
-                          </div><!-- /End Trxn Description -->
-
-                          <!-- Amount -->
-                          <div class="flex justify-end">
-                            <div class="self-center">
-                              <div class="text-2xl md:text-3xl text-black font-extrabold">$1237.42
+                            </span>
+                          </div>
+                          <!-- Boost Popover Content -->
+                          <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="origin-top-right absolute top-0 right-0 mt-2 w-40 rounded-md shadow-lg">
+                            <div class="rounded-md bg-white shadow-xs text-center">
+                              <div class="py-1">
+                                <a href="#" class="block px-4 py-1.5 text-sm leading-5 text-gray-700 hover:bg-orange-100 hover:text-orange-400 hover:font-medium focus:outline-none focus:bg-orange-100 focus:text-orange-400 focus:font-medium cursor-pointer">Investment</a>
+                                <a href="#" class="block px-4 py-1.5 text-sm leading-5 text-gray-700 hover:bg-orange-100 hover:text-orange-400 hover:font-medium focus:outline-none focus:bg-orange-100 focus:text-orange-400 focus:font-medium cursor-pointer">Debt Payment</a>
+                                <a href="#" class="block px-4 py-1.5 text-sm leading-5 text-gray-700 hover:bg-orange-100 hover:text-orange-400 hover:font-medium focus:outline-none focus:bg-orange-100 focus:text-orange-400 focus:font-medium cursor-pointer">Cancel
+                                </a>
                               </div>
                             </div>
-                          </div><!-- /End Amount -->
-
-                        </div>
-                      </div>
-                      <!-- Icons -->
-                      <div class="py-1 my-0 flex justify-between">
-                        <!-- Icon - Income -->
-                        <div class="text-gray-900 text-green-700 text-center p-3 md:p-5 cursor-pointer bg-green-100 rounded-full flex items-center justify-center">
-                          <svg class="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
-                          </svg>
-                        </div>
-                        <!-- Icon - Spending -->
-                        <div class="text-gray-900 hover:text-red-700 text-center p-3 md:p-5 cursor-pointer hover:bg-red-100 rounded-full flex items-center justify-center">
-                          <svg class="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6"/>
-                          </svg>
-                        </div>
-                        <!-- Icon - Boost -->
-                        <div class="text-gray-900 hover:text-orange-400 text-center p-3 md:p-5 cursor-pointer hover:bg-orange-100 rounded-full flex items-center justify-center">
-                          <!-- Hide on xs & sm screens -->
-                          <svg  class="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
-                          </svg>
-                        </div>
-                        <!-- Icon - Split -->
-                        <div class="text-gray-900 hover:text-blue-600 text-center p-3 md:p-5 cursor-pointer hover:bg-blue-100 rounded-full flex items-center justify-center">
-                          <svg class="mr-1 h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
-                          </svg>
-                        </div>
+                          </div><!-- /End Boost Popover Content -->
+                        </div><!-- /End Boost Popover -->
+                        <!-- Icon - Split + Split Popover -->
+                        <div x-data="{ open: false }" @keydown.window.escape="open = false" @click.away="open = false" class="relative inline-block text-right">
+                          <div>
+                            <span class="rounded-md shadow-sm">
+                              <div @click="open = !open" type="button" class="text-gray-900 text-center p-3 md:p-3 cursor-pointer hover:text-blue-600 hover:bg-blue-100 focus:outline-none focus:text-blue-600 focus:bg-blue-100 active:text-blue-600 active:bg-blue-100 rounded-full flex items-center justify-center">
+                                <!-- Split Icon -->
+                                <svg class="mr-1 h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
+                                </svg><!-- /End Split Icon -->
+                              </div>
+                            </span>
+                          </div>
+                          <!-- Split Popover Content -->
+                          <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="origin-top-right absolute top-0 right-0 mt-2 w-40 rounded-md shadow-lg">
+                            <div class="rounded-md bg-white shadow-xs text-center">
+                              <div class="py-1">
+                                <a href="#" class="block px-4 py-1.5 text-sm leading-5 text-gray-700 hover:bg-blue-100 hover:text-blue-600 hover:font-medium focus:outline-none focus:bg-blue-100 focus:text-blue-600 focus:font-medium cursor-pointer">Split</a>
+                                <a href="#" class="block px-4 py-1.5 text-sm leading-5 text-gray-700 hover:bg-blue-100 hover:text-blue-600 hover:font-medium focus:outline-none focus:bg-blue-100 focus:text-blue-600 focus:font-medium cursor-pointer">Remove</a>
+                                <a href="#" class="block px-4 py-1.5 text-sm leading-5 text-gray-700 hover:bg-blue-100 hover:text-blue-600 hover:font-medium focus:outline-none focus:bg-blue-100 focus:text-blue-600 focus:font-medium cursor-pointer">Cancel
+                                </a>
+                              </div>
+                            </div>
+                          </div><!-- /End Split Popover Content -->
+                        </div><!-- /End Split Popover -->
                         <!-- Icon - Ignore -->
-                        <div class="text-gray-900 hover:text-gray-600 text-center p-3 md:p-5 cursor-pointer hover:bg-gray-200 rounded-full flex items-center justify-center">
-                          <svg class="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <div class="text-gray-900 hover:text-gray-600 text-center p-3 md:p-3 cursor-pointer hover:bg-gray-200 rounded-full flex items-center justify-center">
+                          <svg class="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"/>
                           </svg>
                         </div>
@@ -353,30 +315,30 @@
                   <!-- Trxn -->
                   <li class="border-t border-gray-200 w-100">
 
-                    <div class="wrapper px-3 pt-2 pb-0 md:px-4 md:pt-4">
+                    <div class="wrapper px-3 pt-2 pb-0 sm:px-4 sm:pt-4">
                       <div class="min-w-0 flex-1 flex">
                         <div class="min-w-0 flex-1 grid grid-cols-2">
                           <!-- Trxn Description -->
                           <div class="block">
-                            <div class="text-xs sm:text-base leading-5 font-semibold text-gray-400">Loan payment</div>
-                            <div class="flex pb-0 md:mt-1 md:mb-2 text-base sm:text-2xl font-bold leading-5 md:leading-7 text-gray-900">SoFi Student Loans
+                            <div class="text-xs sm:text-sm leading-5 font-medium text-gray-400">Spending</div>
+                            <div class="flex pb-0 md:mt-0 md:mb-0 text-base sm:text-xl font-bold leading-5 sm:leading-7 text-gray-900">In-N-Out Burger
                               
-                              <div class="flex ml-3 hidden">
-                                  <span class="px-3 h-5 md:h-7 text-xs font-semibold rounded-full bg-blue-100 text-blue-600">
+                              <div class="flex ml-3">
+                                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium leading-4 bg-gray-100 text-gray-800">
                                     Split
                                   </span>
                               </div>
                               
                             </div>                            
-                            <div class="flex mt-0 text-xs sm:text-base leading-5 text-gray-400">
-                              <time datetime="2020-01-07">3/1/2020</time>
+                            <div class="flex mt-0 text-xs sm:text-sm font-light leading-5 text-gray-400">
+                              <time datetime="2020-01-07">3/2/2020</time>
                             </div>
                           </div><!-- /End Trxn Description -->
 
                           <!-- Amount -->
                           <div class="flex justify-end">
                             <div class="self-center">
-                              <div class="text-2xl md:text-3xl text-black font-extrabold">$325.00
+                              <div class="text-2xl md:text-3xl text-black font-bold">$13
                               </div>
                             </div>
                           </div><!-- /End Amount -->
@@ -386,33 +348,68 @@
                       <!-- Icons -->
                       <div class="py-1 my-0 flex justify-between">
                         <!-- Icon - Income -->
-                        <div class="text-gray-900 hover:text-green-700 text-center p-3 md:p-5 cursor-pointer hover:bg-green-100 rounded-full flex items-center justify-center">
-                          <svg class="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <div class="text-gray-900 text-center p-3 md:p-3 cursor-pointer hover:text-green-700 hover:bg-green-100 active:text-green-700 active:bg-green-100 rounded-full flex items-center justify-center">
+                          <svg class="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
                           </svg>
                         </div>
                         <!-- Icon - Spending -->
-                        <div class="text-gray-900 hover:text-red-700 text-center p-3 md:p-5 cursor-pointer hover:bg-red-100 rounded-full flex items-center justify-center">
-                          <svg class="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <div class="text-gray-900 text-red-700 text-center p-3 md:p-3 cursor-pointer bg-red-100 rounded-full flex items-center justify-center">
+                          <svg class="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6"/>
                           </svg>
                         </div>
-                        <!-- Icon - Boost -->
-                        <div class="text-gray-900 text-orange-400 text-center p-3 md:p-5 cursor-pointer bg-orange-100 rounded-full flex items-center justify-center">
-                          <!-- Hide on xs & sm screens -->
-                          <svg  class="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
-                          </svg>
-                        </div>
-                        <!-- Icon - Split -->
-                        <div class="text-gray-900 hover:text-blue-600 text-center p-3 md:p-5 cursor-pointer hover:bg-blue-100 rounded-full flex items-center justify-center">
-                          <svg class="mr-1 h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
-                          </svg>
-                        </div>
+                        <!-- Icon - Boost + Boost Popover -->
+                        <div x-data="{ open: false }" @keydown.window.escape="open = false" @click.away="open = false" class="relative inline-block text-right">
+                          <div>
+                            <span class="rounded-md shadow-sm">
+                              <div @click="open = !open" type="button" class="text-gray-900 text-center p-3 md:p-3 cursor-pointer hover:text-orange-400 hover:bg-orange-100 focus:outline-none focus:text-orange-400 focus:bg-orange-100 active:text-orange-400 active:bg-orange-100 rounded-full flex items-center justify-center">
+                                <!-- Bolt Icon -->
+                                <svg class="h-4 w-4 sm:h-5 sm:w-5" viewBox="0 0 20 20" fill="currentColor">
+                                  <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
+                                </svg><!-- /End Bolt Icon -->
+                              </div>
+                            </span>
+                          </div>
+                          <!-- Boost Popover Content -->
+                          <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="origin-top-right absolute top-0 right-0 mt-2 w-40 rounded-md shadow-lg">
+                            <div class="rounded-md bg-white shadow-xs text-center">
+                              <div class="py-1">
+                                <a href="#" class="block px-4 py-1.5 text-sm leading-5 text-gray-700 hover:bg-orange-100 hover:text-orange-400 hover:font-medium focus:outline-none focus:bg-orange-100 focus:text-orange-400 focus:font-medium cursor-pointer">Investment</a>
+                                <a href="#" class="block px-4 py-1.5 text-sm leading-5 text-gray-700 hover:bg-orange-100 hover:text-orange-400 hover:font-medium focus:outline-none focus:bg-orange-100 focus:text-orange-400 focus:font-medium cursor-pointer">Debt Payment</a>
+                                <a href="#" class="block px-4 py-1.5 text-sm leading-5 text-gray-700 hover:bg-orange-100 hover:text-orange-400 hover:font-medium focus:outline-none focus:bg-orange-100 focus:text-orange-400 focus:font-medium cursor-pointer">Cancel
+                                </a>
+                              </div>
+                            </div>
+                          </div><!-- /End Boost Popover Content -->
+                        </div><!-- /End Boost Popover -->
+                        <!-- Icon - Split + Split Popover -->
+                        <div x-data="{ open: false }" @keydown.window.escape="open = false" @click.away="open = false" class="relative inline-block text-right">
+                          <div>
+                            <span class="rounded-md shadow-sm">
+                              <div @click="open = !open" type="button" class="text-gray-900 text-center p-3 md:p-3 cursor-pointer hover:text-blue-600 hover:bg-blue-100 focus:outline-none focus:text-blue-600 focus:bg-blue-100 active:text-blue-600 active:bg-blue-100 rounded-full flex items-center justify-center">
+                                <!-- Split Icon -->
+                                <svg class="mr-1 h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
+                                </svg><!-- /End Split Icon -->
+                              </div>
+                            </span>
+                          </div>
+                          <!-- Split Popover Content -->
+                          <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="origin-top-right absolute top-0 right-0 mt-2 w-40 rounded-md shadow-lg">
+                            <div class="rounded-md bg-white shadow-xs text-center">
+                              <div class="py-1">
+                                <a href="#" class="block px-4 py-1.5 text-sm leading-5 text-gray-700 hover:bg-blue-100 hover:text-blue-600 hover:font-medium focus:outline-none focus:bg-blue-100 focus:text-blue-600 focus:font-medium cursor-pointer">Split</a>
+                                <a href="#" class="block px-4 py-1.5 text-sm leading-5 text-gray-700 hover:bg-blue-100 hover:text-blue-600 hover:font-medium focus:outline-none focus:bg-blue-100 focus:text-blue-600 focus:font-medium cursor-pointer">Remove</a>
+                                <a href="#" class="block px-4 py-1.5 text-sm leading-5 text-gray-700 hover:bg-blue-100 hover:text-blue-600 hover:font-medium focus:outline-none focus:bg-blue-100 focus:text-blue-600 focus:font-medium cursor-pointer">Cancel
+                                </a>
+                              </div>
+                            </div>
+                          </div><!-- /End Split Popover Content -->
+                        </div><!-- /End Split Popover -->
                         <!-- Icon - Ignore -->
-                        <div class="text-gray-900 hover:text-gray-600 text-center p-3 md:p-5 cursor-pointer hover:bg-gray-200 rounded-full flex items-center justify-center">
-                          <svg class="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <div class="text-gray-900 hover:text-gray-600 text-center p-3 md:p-3 cursor-pointer hover:bg-gray-200 rounded-full flex items-center justify-center">
+                          <svg class="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"/>
                           </svg>
                         </div>
@@ -424,30 +421,30 @@
                   <!-- Trxn -->
                   <li class="border-t border-gray-200 w-100">
 
-                    <div class="wrapper px-3 pt-2 pb-0 md:px-4 md:pt-4">
+                    <div class="wrapper px-3 pt-2 pb-0 sm:px-4 sm:pt-4">
                       <div class="min-w-0 flex-1 flex">
                         <div class="min-w-0 flex-1 grid grid-cols-2">
                           <!-- Trxn Description -->
                           <div class="block">
-                            <div class="text-xs sm:text-base leading-5 font-semibold text-gray-400">Spending</div>
-                            <div class="flex pb-0 md:mt-1 md:mb-2 text-base sm:text-2xl font-bold leading-5 md:leading-7 text-gray-900">Pho Noodle House
+                            <div class="text-xs sm:text-sm leading-5 font-medium text-gray-400">Spending</div>
+                            <div class="flex pb-0 md:mt-0 md:mb-0 text-base sm:text-xl font-bold leading-5 sm:leading-7 text-gray-900">In-N-Out Burger
                               
                               <div class="flex ml-3">
-                                  <span class="px-3 h-5 md:h-7 text-xs font-semibold rounded-full bg-gray-500 text-gray-100">
+                                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium leading-4 bg-gray-100 text-gray-800">
                                     Split
                                   </span>
                               </div>
                               
                             </div>                            
-                            <div class="flex mt-0 text-xs sm:text-base leading-5 text-gray-400">
-                              <time datetime="2020-01-07">2/27/2020</time>
+                            <div class="flex mt-0 text-xs sm:text-sm font-light leading-5 text-gray-400">
+                              <time datetime="2020-01-07">3/2/2020</time>
                             </div>
                           </div><!-- /End Trxn Description -->
 
                           <!-- Amount -->
                           <div class="flex justify-end">
                             <div class="self-center">
-                              <div class="text-2xl md:text-3xl text-black font-extrabold">$14.00
+                              <div class="text-2xl md:text-3xl text-black font-bold">$13
                               </div>
                             </div>
                           </div><!-- /End Amount -->
@@ -457,33 +454,68 @@
                       <!-- Icons -->
                       <div class="py-1 my-0 flex justify-between">
                         <!-- Icon - Income -->
-                        <div class="text-gray-900 hover:text-green-700 text-center p-3 md:p-5 cursor-pointer hover:bg-green-100 rounded-full flex items-center justify-center">
-                          <svg class="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <div class="text-gray-900 text-center p-3 md:p-3 cursor-pointer hover:text-green-700 hover:bg-green-100 active:text-green-700 active:bg-green-100 rounded-full flex items-center justify-center">
+                          <svg class="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
                           </svg>
                         </div>
                         <!-- Icon - Spending -->
-                        <div class="text-gray-900 text-red-700 text-center p-3 md:p-5 cursor-pointer bg-red-100 rounded-full flex items-center justify-center">
-                          <svg class="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <div class="text-gray-900 text-red-700 text-center p-3 md:p-3 cursor-pointer bg-red-100 rounded-full flex items-center justify-center">
+                          <svg class="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6"/>
                           </svg>
                         </div>
-                        <!-- Icon - Boost -->
-                        <div class="text-gray-900 hover:text-orange-400 text-center p-3 md:p-5 cursor-pointer hover:bg-orange-100 rounded-full flex items-center justify-center">
-                          <!-- Hide on xs & sm screens -->
-                          <svg  class="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
-                          </svg>
-                        </div>
-                        <!-- Icon - Split -->
-                        <div class="text-gray-900 hover:text-blue-600 text-center p-3 md:p-5 cursor-pointer hover:bg-blue-100 rounded-full flex items-center justify-center">
-                          <svg class="mr-1 h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
-                          </svg>
-                        </div>
+                        <!-- Icon - Boost + Boost Popover -->
+                        <div x-data="{ open: false }" @keydown.window.escape="open = false" @click.away="open = false" class="relative inline-block text-right">
+                          <div>
+                            <span class="rounded-md shadow-sm">
+                              <div @click="open = !open" type="button" class="text-gray-900 text-center p-3 md:p-3 cursor-pointer hover:text-orange-400 hover:bg-orange-100 focus:outline-none focus:text-orange-400 focus:bg-orange-100 active:text-orange-400 active:bg-orange-100 rounded-full flex items-center justify-center">
+                                <!-- Bolt Icon -->
+                                <svg class="h-4 w-4 sm:h-5 sm:w-5" viewBox="0 0 20 20" fill="currentColor">
+                                  <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
+                                </svg><!-- /End Bolt Icon -->
+                              </div>
+                            </span>
+                          </div>
+                          <!-- Boost Popover Content -->
+                          <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="origin-top-right absolute top-0 right-0 mt-2 w-40 rounded-md shadow-lg">
+                            <div class="rounded-md bg-white shadow-xs text-center">
+                              <div class="py-1">
+                                <a href="#" class="block px-4 py-1.5 text-sm leading-5 text-gray-700 hover:bg-orange-100 hover:text-orange-400 hover:font-medium focus:outline-none focus:bg-orange-100 focus:text-orange-400 focus:font-medium cursor-pointer">Investment</a>
+                                <a href="#" class="block px-4 py-1.5 text-sm leading-5 text-gray-700 hover:bg-orange-100 hover:text-orange-400 hover:font-medium focus:outline-none focus:bg-orange-100 focus:text-orange-400 focus:font-medium cursor-pointer">Debt Payment</a>
+                                <a href="#" class="block px-4 py-1.5 text-sm leading-5 text-gray-700 hover:bg-orange-100 hover:text-orange-400 hover:font-medium focus:outline-none focus:bg-orange-100 focus:text-orange-400 focus:font-medium cursor-pointer">Cancel
+                                </a>
+                              </div>
+                            </div>
+                          </div><!-- /End Boost Popover Content -->
+                        </div><!-- /End Boost Popover -->
+                        <!-- Icon - Split + Split Popover -->
+                        <div x-data="{ open: false }" @keydown.window.escape="open = false" @click.away="open = false" class="relative inline-block text-right">
+                          <div>
+                            <span class="rounded-md shadow-sm">
+                              <div @click="open = !open" type="button" class="text-gray-900 text-center p-3 md:p-3 cursor-pointer hover:text-blue-600 hover:bg-blue-100 focus:outline-none focus:text-blue-600 focus:bg-blue-100 active:text-blue-600 active:bg-blue-100 rounded-full flex items-center justify-center">
+                                <!-- Split Icon -->
+                                <svg class="mr-1 h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
+                                </svg><!-- /End Split Icon -->
+                              </div>
+                            </span>
+                          </div>
+                          <!-- Split Popover Content -->
+                          <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="origin-top-right absolute top-0 right-0 mt-2 w-40 rounded-md shadow-lg">
+                            <div class="rounded-md bg-white shadow-xs text-center">
+                              <div class="py-1">
+                                <a href="#" class="block px-4 py-1.5 text-sm leading-5 text-gray-700 hover:bg-blue-100 hover:text-blue-600 hover:font-medium focus:outline-none focus:bg-blue-100 focus:text-blue-600 focus:font-medium cursor-pointer">Split</a>
+                                <a href="#" class="block px-4 py-1.5 text-sm leading-5 text-gray-700 hover:bg-blue-100 hover:text-blue-600 hover:font-medium focus:outline-none focus:bg-blue-100 focus:text-blue-600 focus:font-medium cursor-pointer">Remove</a>
+                                <a href="#" class="block px-4 py-1.5 text-sm leading-5 text-gray-700 hover:bg-blue-100 hover:text-blue-600 hover:font-medium focus:outline-none focus:bg-blue-100 focus:text-blue-600 focus:font-medium cursor-pointer">Cancel
+                                </a>
+                              </div>
+                            </div>
+                          </div><!-- /End Split Popover Content -->
+                        </div><!-- /End Split Popover -->
                         <!-- Icon - Ignore -->
-                        <div class="text-gray-900 hover:text-gray-600 text-center p-3 md:p-5 cursor-pointer hover:bg-gray-200 rounded-full flex items-center justify-center">
-                          <svg class="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <div class="text-gray-900 hover:text-gray-600 text-center p-3 md:p-3 cursor-pointer hover:bg-gray-200 rounded-full flex items-center justify-center">
+                          <svg class="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"/>
                           </svg>
                         </div>
@@ -492,33 +524,33 @@
                     
                   </li><!-- /End Trxn -->
 
-                   <!-- Trxn -->
+                  <!-- Trxn -->
                   <li class="border-t border-gray-200 w-100">
 
-                    <div class="wrapper px-3 pt-2 pb-0 md:px-4 md:pt-4">
+                    <div class="wrapper px-3 pt-2 pb-0 sm:px-4 sm:pt-4">
                       <div class="min-w-0 flex-1 flex">
                         <div class="min-w-0 flex-1 grid grid-cols-2">
                           <!-- Trxn Description -->
                           <div class="block">
-                            <div class="text-xs sm:text-base leading-5 font-semibold text-gray-300">Ignore</div>
-                            <div class="flex pb-0 md:mt-1 md:mb-2 text-base sm:text-2xl font-bold leading-5 md:leading-7 text-gray-400">Pho Noodle House
+                            <div class="text-xs sm:text-sm leading-5 font-medium text-gray-400">Spending</div>
+                            <div class="flex pb-0 md:mt-0 md:mb-0 text-base sm:text-xl font-bold leading-5 sm:leading-7 text-gray-900">In-N-Out Burger
                               
                               <div class="flex ml-3">
-                                  <span class="px-3 h-5 md:h-7 text-xs font-semibold rounded-full bg-gray-100 text-gray-400">
+                                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium leading-4 bg-gray-100 text-gray-800">
                                     Split
                                   </span>
                               </div>
                               
                             </div>                            
-                            <div class="flex mt-0 text-xs sm:text-base leading-5 text-gray-300">
-                              <time datetime="2020-01-07">2/27/2020</time>
+                            <div class="flex mt-0 text-xs sm:text-sm font-light leading-5 text-gray-400">
+                              <time datetime="2020-01-07">3/2/2020</time>
                             </div>
                           </div><!-- /End Trxn Description -->
 
                           <!-- Amount -->
                           <div class="flex justify-end">
                             <div class="self-center">
-                              <div class="text-2xl md:text-3xl text-gray-400 font-extrabold">$14.00
+                              <div class="text-2xl md:text-3xl text-black font-bold">$13
                               </div>
                             </div>
                           </div><!-- /End Amount -->
@@ -528,33 +560,68 @@
                       <!-- Icons -->
                       <div class="py-1 my-0 flex justify-between">
                         <!-- Icon - Income -->
-                        <div class="text-gray-900 hover:text-green-700 text-center p-3 md:p-5 cursor-pointer hover:bg-green-100 rounded-full flex items-center justify-center">
-                          <svg class="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <div class="text-gray-900 text-center p-3 md:p-3 cursor-pointer hover:text-green-700 hover:bg-green-100 active:text-green-700 active:bg-green-100 rounded-full flex items-center justify-center">
+                          <svg class="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
                           </svg>
                         </div>
                         <!-- Icon - Spending -->
-                        <div class="text-gray-900 hover:text-red-700 text-center p-3 md:p-5 cursor-pointer hover:bg-red-100 rounded-full flex items-center justify-center">
-                          <svg class="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <div class="text-gray-900 text-red-700 text-center p-3 md:p-3 cursor-pointer bg-red-100 rounded-full flex items-center justify-center">
+                          <svg class="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6"/>
                           </svg>
                         </div>
-                        <!-- Icon - Boost -->
-                        <div class="text-gray-900 hover:text-orange-400 text-center p-3 md:p-5 cursor-pointer hover:bg-orange-100 rounded-full flex items-center justify-center">
-                          <!-- Hide on xs & sm screens -->
-                          <svg  class="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
-                          </svg>
-                        </div>
-                        <!-- Icon - Split -->
-                        <div class="text-gray-900 hover:text-blue-600 text-center p-3 md:p-5 cursor-pointer hover:bg-blue-100 rounded-full flex items-center justify-center">
-                          <svg class="mr-1 h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
-                          </svg>
-                        </div>
+                        <!-- Icon - Boost + Boost Popover -->
+                        <div x-data="{ open: false }" @keydown.window.escape="open = false" @click.away="open = false" class="relative inline-block text-right">
+                          <div>
+                            <span class="rounded-md shadow-sm">
+                              <div @click="open = !open" type="button" class="text-gray-900 text-center p-3 md:p-3 cursor-pointer hover:text-orange-400 hover:bg-orange-100 focus:outline-none focus:text-orange-400 focus:bg-orange-100 active:text-orange-400 active:bg-orange-100 rounded-full flex items-center justify-center">
+                                <!-- Bolt Icon -->
+                                <svg class="h-4 w-4 sm:h-5 sm:w-5" viewBox="0 0 20 20" fill="currentColor">
+                                  <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
+                                </svg><!-- /End Bolt Icon -->
+                              </div>
+                            </span>
+                          </div>
+                          <!-- Boost Popover Content -->
+                          <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="origin-top-right absolute top-0 right-0 mt-2 w-40 rounded-md shadow-lg">
+                            <div class="rounded-md bg-white shadow-xs text-center">
+                              <div class="py-1">
+                                <a href="#" class="block px-4 py-1.5 text-sm leading-5 text-gray-700 hover:bg-orange-100 hover:text-orange-400 hover:font-medium focus:outline-none focus:bg-orange-100 focus:text-orange-400 focus:font-medium cursor-pointer">Investment</a>
+                                <a href="#" class="block px-4 py-1.5 text-sm leading-5 text-gray-700 hover:bg-orange-100 hover:text-orange-400 hover:font-medium focus:outline-none focus:bg-orange-100 focus:text-orange-400 focus:font-medium cursor-pointer">Debt Payment</a>
+                                <a href="#" class="block px-4 py-1.5 text-sm leading-5 text-gray-700 hover:bg-orange-100 hover:text-orange-400 hover:font-medium focus:outline-none focus:bg-orange-100 focus:text-orange-400 focus:font-medium cursor-pointer">Cancel
+                                </a>
+                              </div>
+                            </div>
+                          </div><!-- /End Boost Popover Content -->
+                        </div><!-- /End Boost Popover -->
+                        <!-- Icon - Split + Split Popover -->
+                        <div x-data="{ open: false }" @keydown.window.escape="open = false" @click.away="open = false" class="relative inline-block text-right">
+                          <div>
+                            <span class="rounded-md shadow-sm">
+                              <div @click="open = !open" type="button" class="text-gray-900 text-center p-3 md:p-3 cursor-pointer hover:text-blue-600 hover:bg-blue-100 focus:outline-none focus:text-blue-600 focus:bg-blue-100 active:text-blue-600 active:bg-blue-100 rounded-full flex items-center justify-center">
+                                <!-- Split Icon -->
+                                <svg class="mr-1 h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
+                                </svg><!-- /End Split Icon -->
+                              </div>
+                            </span>
+                          </div>
+                          <!-- Split Popover Content -->
+                          <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="origin-top-right absolute top-0 right-0 mt-2 w-40 rounded-md shadow-lg">
+                            <div class="rounded-md bg-white shadow-xs text-center">
+                              <div class="py-1">
+                                <a href="#" class="block px-4 py-1.5 text-sm leading-5 text-gray-700 hover:bg-blue-100 hover:text-blue-600 hover:font-medium focus:outline-none focus:bg-blue-100 focus:text-blue-600 focus:font-medium cursor-pointer">Split</a>
+                                <a href="#" class="block px-4 py-1.5 text-sm leading-5 text-gray-700 hover:bg-blue-100 hover:text-blue-600 hover:font-medium focus:outline-none focus:bg-blue-100 focus:text-blue-600 focus:font-medium cursor-pointer">Remove</a>
+                                <a href="#" class="block px-4 py-1.5 text-sm leading-5 text-gray-700 hover:bg-blue-100 hover:text-blue-600 hover:font-medium focus:outline-none focus:bg-blue-100 focus:text-blue-600 focus:font-medium cursor-pointer">Cancel
+                                </a>
+                              </div>
+                            </div>
+                          </div><!-- /End Split Popover Content -->
+                        </div><!-- /End Split Popover -->
                         <!-- Icon - Ignore -->
-                        <div class="text-gray-900 text-gray-600 text-center p-3 md:p-5 cursor-pointer bg-gray-200 rounded-full flex items-center justify-center">
-                          <svg class="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <div class="text-gray-900 hover:text-gray-600 text-center p-3 md:p-3 cursor-pointer hover:bg-gray-200 rounded-full flex items-center justify-center">
+                          <svg class="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"/>
                           </svg>
                         </div>
@@ -563,33 +630,33 @@
                     
                   </li><!-- /End Trxn -->
 
-                   <!-- Trxn -->
-                   <li class="border-t border-gray-200 w-100">
+                  <!-- Trxn -->
+                  <li class="border-t border-gray-200 w-100">
 
-                    <div class="wrapper px-3 pt-2 pb-0 md:px-4 md:pt-4">
+                    <div class="wrapper px-3 pt-2 pb-0 sm:px-4 sm:pt-4">
                       <div class="min-w-0 flex-1 flex">
                         <div class="min-w-0 flex-1 grid grid-cols-2">
                           <!-- Trxn Description -->
                           <div class="block">
-                            <div class="text-xs sm:text-base leading-5 font-semibold text-gray-400">Investment</div>
-                            <div class="flex pb-0 md:mt-1 md:mb-2 text-base sm:text-2xl font-bold leading-5 md:leading-7 text-gray-900">Robinhood
+                            <div class="text-xs sm:text-sm leading-5 font-medium text-gray-400">Spending</div>
+                            <div class="flex pb-0 md:mt-0 md:mb-0 text-base sm:text-xl font-bold leading-5 sm:leading-7 text-gray-900">In-N-Out Burger
                               
-                              <div class="flex ml-3 hidden">
-                                  <span class="px-3 h-5 md:h-7 text-xs font-semibold rounded-full bg-blue-100 text-blue-600">
+                              <div class="flex ml-3">
+                                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium leading-4 bg-gray-100 text-gray-800">
                                     Split
                                   </span>
                               </div>
                               
                             </div>                            
-                            <div class="flex mt-0 text-xs sm:text-base leading-5 text-gray-400">
-                              <time datetime="2020-01-07">2/25/2020</time>
+                            <div class="flex mt-0 text-xs sm:text-sm font-light leading-5 text-gray-400">
+                              <time datetime="2020-01-07">3/2/2020</time>
                             </div>
                           </div><!-- /End Trxn Description -->
 
                           <!-- Amount -->
                           <div class="flex justify-end">
                             <div class="self-center">
-                              <div class="text-2xl md:text-3xl text-black font-extrabold">$150.00
+                              <div class="text-2xl md:text-3xl text-black font-bold">$13
                               </div>
                             </div>
                           </div><!-- /End Amount -->
@@ -599,33 +666,68 @@
                       <!-- Icons -->
                       <div class="py-1 my-0 flex justify-between">
                         <!-- Icon - Income -->
-                        <div class="text-gray-900 hover:text-green-700 text-center p-3 md:p-5 cursor-pointer hover:bg-green-100 rounded-full flex items-center justify-center">
-                          <svg class="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <div class="text-gray-900 text-center p-3 md:p-3 cursor-pointer hover:text-green-700 hover:bg-green-100 active:text-green-700 active:bg-green-100 rounded-full flex items-center justify-center">
+                          <svg class="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
                           </svg>
                         </div>
                         <!-- Icon - Spending -->
-                        <div class="text-gray-900 hover:text-red-700 text-center p-3 md:p-5 cursor-pointer hover:bg-red-100 rounded-full flex items-center justify-center">
-                          <svg class="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <div class="text-gray-900 text-red-700 text-center p-3 md:p-3 cursor-pointer bg-red-100 rounded-full flex items-center justify-center">
+                          <svg class="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6"/>
                           </svg>
                         </div>
-                        <!-- Icon - Boost -->
-                        <div class="text-gray-900 text-orange-400 text-center p-3 md:p-5 cursor-pointer bg-orange-100 rounded-full flex items-center justify-center">
-                          <!-- Hide on xs & sm screens -->
-                          <svg  class="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
-                          </svg>
-                        </div>
-                        <!-- Icon - Split -->
-                        <div class="text-gray-900 hover:text-blue-600 text-center p-3 md:p-5 cursor-pointer hover:bg-blue-100 rounded-full flex items-center justify-center">
-                          <svg class="mr-1 h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
-                          </svg>
-                        </div>
+                        <!-- Icon - Boost + Boost Popover -->
+                        <div x-data="{ open: false }" @keydown.window.escape="open = false" @click.away="open = false" class="relative inline-block text-right">
+                          <div>
+                            <span class="rounded-md shadow-sm">
+                              <div @click="open = !open" type="button" class="text-gray-900 text-center p-3 md:p-3 cursor-pointer hover:text-orange-400 hover:bg-orange-100 focus:outline-none focus:text-orange-400 focus:bg-orange-100 active:text-orange-400 active:bg-orange-100 rounded-full flex items-center justify-center">
+                                <!-- Bolt Icon -->
+                                <svg class="h-4 w-4 sm:h-5 sm:w-5" viewBox="0 0 20 20" fill="currentColor">
+                                  <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
+                                </svg><!-- /End Bolt Icon -->
+                              </div>
+                            </span>
+                          </div>
+                          <!-- Boost Popover Content -->
+                          <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="origin-top-right absolute top-0 right-0 mt-2 w-40 rounded-md shadow-lg">
+                            <div class="rounded-md bg-white shadow-xs text-center">
+                              <div class="py-1">
+                                <a href="#" class="block px-4 py-1.5 text-sm leading-5 text-gray-700 hover:bg-orange-100 hover:text-orange-400 hover:font-medium focus:outline-none focus:bg-orange-100 focus:text-orange-400 focus:font-medium cursor-pointer">Investment</a>
+                                <a href="#" class="block px-4 py-1.5 text-sm leading-5 text-gray-700 hover:bg-orange-100 hover:text-orange-400 hover:font-medium focus:outline-none focus:bg-orange-100 focus:text-orange-400 focus:font-medium cursor-pointer">Debt Payment</a>
+                                <a href="#" class="block px-4 py-1.5 text-sm leading-5 text-gray-700 hover:bg-orange-100 hover:text-orange-400 hover:font-medium focus:outline-none focus:bg-orange-100 focus:text-orange-400 focus:font-medium cursor-pointer">Cancel
+                                </a>
+                              </div>
+                            </div>
+                          </div><!-- /End Boost Popover Content -->
+                        </div><!-- /End Boost Popover -->
+                        <!-- Icon - Split + Split Popover -->
+                        <div x-data="{ open: false }" @keydown.window.escape="open = false" @click.away="open = false" class="relative inline-block text-right">
+                          <div>
+                            <span class="rounded-md shadow-sm">
+                              <div @click="open = !open" type="button" class="text-gray-900 text-center p-3 md:p-3 cursor-pointer hover:text-blue-600 hover:bg-blue-100 focus:outline-none focus:text-blue-600 focus:bg-blue-100 active:text-blue-600 active:bg-blue-100 rounded-full flex items-center justify-center">
+                                <!-- Split Icon -->
+                                <svg class="mr-1 h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
+                                </svg><!-- /End Split Icon -->
+                              </div>
+                            </span>
+                          </div>
+                          <!-- Split Popover Content -->
+                          <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="origin-top-right absolute top-0 right-0 mt-2 w-40 rounded-md shadow-lg">
+                            <div class="rounded-md bg-white shadow-xs text-center">
+                              <div class="py-1">
+                                <a href="#" class="block px-4 py-1.5 text-sm leading-5 text-gray-700 hover:bg-blue-100 hover:text-blue-600 hover:font-medium focus:outline-none focus:bg-blue-100 focus:text-blue-600 focus:font-medium cursor-pointer">Split</a>
+                                <a href="#" class="block px-4 py-1.5 text-sm leading-5 text-gray-700 hover:bg-blue-100 hover:text-blue-600 hover:font-medium focus:outline-none focus:bg-blue-100 focus:text-blue-600 focus:font-medium cursor-pointer">Remove</a>
+                                <a href="#" class="block px-4 py-1.5 text-sm leading-5 text-gray-700 hover:bg-blue-100 hover:text-blue-600 hover:font-medium focus:outline-none focus:bg-blue-100 focus:text-blue-600 focus:font-medium cursor-pointer">Cancel
+                                </a>
+                              </div>
+                            </div>
+                          </div><!-- /End Split Popover Content -->
+                        </div><!-- /End Split Popover -->
                         <!-- Icon - Ignore -->
-                        <div class="text-gray-900 hover:text-gray-600 text-center p-3 md:p-5 cursor-pointer hover:bg-gray-200 rounded-full flex items-center justify-center">
-                          <svg class="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <div class="text-gray-900 hover:text-gray-600 text-center p-3 md:p-3 cursor-pointer hover:bg-gray-200 rounded-full flex items-center justify-center">
+                          <svg class="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"/>
                           </svg>
                         </div>

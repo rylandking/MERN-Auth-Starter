@@ -8,7 +8,7 @@ module.exports = {
       }
     }
   },
-  variants: {},
+  variants: { backgroundColor: ['responsive', 'hover', 'focus', 'active'] },
   plugins: [
     require('tailwindcss'),
     require('autoprefixer'),
