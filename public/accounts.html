@@ -200,7 +200,6 @@
                   </div>
                 </div>
               </div>
-
             </div>
           </div><!-- /End Settings Icon-->
       </header>
@@ -241,29 +240,94 @@
               <li class="border-t border-gray-200 w-100">
                 <div class="wrapper px-6 py-4 sm:pt-4">
                   <div class="min-w-0 flex-1 flex">
-                    <div class="min-w-0 flex-1 grid grid-cols-2">
+                    <div class="min-w-0 flex-1 grid grid-cols-12">
+                      <!-- Toggle Account -->
+                      <div class="flex col-span-2 sm:col-span-1">
+                        <div class="self-center">
+                          <span x-data="{ value: true, toggle() { this.value = !this.value } }"
+                            :class="{ 'bg-gray-200': !value, 'bg-green-400': value }"
+                            class="relative inline-block flex-no-shrink h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:shadow-outline"
+                            role="checkbox" tabindex="0" @click="toggle()" @keydown.space.prevent="toggle()"
+                            :aria-checked="value.toString()">
+                            <span aria-hidden="true" :class="{ 'translate-x-5': value, 'translate-x-0': !value }"
+                              class="relative inline-block h-5 w-5 rounded-full bg-white shadow transform transition ease-in-out duration-200">
+                              <span
+                                :class="{ 'opacity-0 ease-out duration-100': value, 'opacity-100 ease-in duration-200': !value }"
+                                class="absolute inset-0 h-full w-full flex items-center justify-center transition-opacity">
+                                <svg class="h-3 w-3 text-gray-400" fill="none" viewBox="0 0 12 12">
+                                  <path d="M4 8l2-2m0 0l2-2M6 6L4 4m2 2l2 2" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                              </span>
+                              <span
+                                :class="{ 'opacity-100 ease-in duration-200': value, 'opacity-0 ease-out duration-100': !value }"
+                                class="absolute inset-0 h-full w-full flex items-center justify-center transition-opacity">
+                                <svg class="h-3 w-3 text-green-400" fill="currentColor" viewBox="0 0 12 12">
+                                  <path
+                                    d="M3.707 5.293a1 1 0 00-1.414 1.414l1.414-1.414zM5 8l-.707.707a1 1 0 001.414 0L5 8zm4.707-3.293a1 1 0 00-1.414-1.414l1.414 1.414zm-7.414 2l2 2 1.414-1.414-2-2-1.414 1.414zm3.414 2l4-4-1.414-1.414-4 4 1.414 1.414z" />
+                                </svg>
+                              </span>
+                            </span>
+                          </span>
+                        </div>
+                      </div><!-- /End Toggle Account -->
                       <!-- Account Description -->
-                      <div class="block">
+                      <div class="block col-span-4 sm:col-span-5 pl-3 md:pl-0">
                         <div class="flex pt-1 md:mt-0 md:mb-0 text-xl font-medium leading-5 sm:leading-7 text-gray-900">
                           Checking
                         </div>
                         <div class="flex mt-0 text-xs sm:text-sm font-normal leading-5 text-gray-400">
                           <time datetime="2020-01-07">Ally Bank</time>
                         </div>
-                      </div>
-                      <!-- /End Account Description -->
+                      </div><!-- /End Account Description -->
                       <!-- Amount -->
-                      <div class="flex justify-end">
+                      <div class="flex justify-end col-span-4 sm:col-span-5">
                         <div class="self-center">
                           <div class="text-xl text-black font-normal">
                             $2,325
                           </div>
                         </div>
+                      </div><!-- /End Amount -->
+                      <!-- Delete Account -->
+                      <div class="flex col-span-2 sm:col-span-1 justify-end">
+                        <div class="self-center">
+                          <div x-data="{ open: false }" @keydown.window.escape="open = false" @click.away="open = false"
+                            class="relative inline-block text-right">
+                            <div>
+                              <span class="rounded-md shadow-sm">
+                                <div @click="open = !open" type="button"
+                                  class="text-red-600 hover:bg-red-100 text-center p-2 md:p-3 cursor-pointer rounded-full flex items-center justify-center">
+                                  <svg class="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                      d="M6 18L18 6M6 6l12 12" />
+                                  </svg>
+                                </div>
+                              </span>
+                            </div>
+                            <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                              x-transition:enter-start="transform opacity-0 scale-95"
+                              x-transition:enter-end="transform opacity-100 scale-100"
+                              x-transition:leave="transition ease-in duration-75"
+                              x-transition:leave-start="transform opacity-100 scale-100"
+                              x-transition:leave-end="transform opacity-0 scale-95"
+                              class="origin-top-right absolute top-0 right-0 mt-2 w-40 rounded-md shadow-lg">
+                              <div class="rounded-md bg-white shadow-xs text-center">
+                                <div class="py-1">
+                                  <a href="#"
+                                    class="block px-4 py-1.5 text-sm leading-5 text-white bg-red-500 hover:bg-red-600 hover:font-semibold focus:outline-none focus:bg-red-100 focus:text-red-800 focus:font-semibold cursor-pointer">Delete
+                                    account?</a>
+                                  <a href="#"
+                                    class="block px-4 py-1.5 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-600 hover:font-medium focus:outline-none focus:bg-gray-100 focus:text-gray-600 focus:font-medium cursor-pointer">Cancel
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div><!-- /End Delete Account -->
                       </div>
-                      <!-- /End Amount -->
                     </div>
                   </div>
-                </div>
               </li><!-- /End Account -->
               <!-- Account -->
               <li class="border-t border-gray-200 w-100">
