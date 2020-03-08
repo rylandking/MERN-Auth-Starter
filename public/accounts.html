@@ -153,11 +153,56 @@
 
     <div class="pt-8 pb-5">
       <header>
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 ">
-          <h2 class="text-3xl font-bold leading-tight text-gray-900">
-            Accounts
-          </h2>
-        </div>
+        <div class="max-w-4xl mx-auto flex justify-between px-4 sm:px-6 lg:px-8">
+          <div>
+            <h2 class="text-3xl font-bold leading-tight text-gray-900">
+              Accounts
+            </h2>
+          </div>
+          <!-- Settings Icon-->
+          <div class="self-center">
+            <div x-data="{ open: false }" @keydown.window.escape="open = false" @click.away="open = false"
+              class="relative inline-block text-right">
+              <div>
+                <span class="rounded-md shadow-sm">
+                  <div @click="open = !open" type="button"
+                    class="text-gray-900 text-center p-2 md:p-3 cursor-pointer hover:text-gray-800 hover:bg-gray-100 focus:outline-none focus:text-gray-700 focus:bg-gray-100 active:text-gray-700 active:bg-gray-100 rounded-full flex items-center justify-center">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </div>
+                </span>
+              </div>
+
+              <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                x-transition:enter-start="transform opacity-0 scale-95"
+                x-transition:enter-end="transform opacity-100 scale-100"
+                x-transition:leave="transition ease-in duration-75"
+                x-transition:leave-start="transform opacity-100 scale-100"
+                x-transition:leave-end="transform opacity-0 scale-95"
+                class="origin-top-right absolute top-0 right-0 mt-2 w-40 rounded-md shadow-lg">
+                <div class="rounded-md bg-white shadow-xs text-center">
+                  <div class="py-1">
+                    <a href="#"
+                      class="block px-4 py-1.5 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-800 hover:font-medium focus:outline-none focus:bg-gray-100 focus:text-gray-700 focus:font-medium cursor-pointer">Add
+                      Account
+                    </a>
+                    <a href="#"
+                      class="block px-4 py-1.5 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-800 hover:font-medium focus:outline-none focus:bg-gray-100 focus:text-gray-700 focus:font-medium cursor-pointer">Edit
+                      Accounts
+                    </a>
+                    <a href="#"
+                      class="block px-4 py-1.5 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-800 hover:font-medium focus:outline-none focus:bg-gray-100 focus:text-gray-700 focus:font-medium cursor-pointer">Cancel
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div><!-- /End Settings Icon-->
       </header>
       <main>
         <div class="max-w-4xl mx-auto sm:px-6 lg:px-8">
