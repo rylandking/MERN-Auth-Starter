@@ -19,11 +19,11 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "npm run watch:css & react-scripts start",
+    "build": "npm run build:css && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build:css": "tailwind build styles/styles.css -o styles/output.css"
+    "build:css": "tailwind build src/styles/styles.css -o src/index.css"
   },
   "eslintConfig": {
     "extends": "react-app"
