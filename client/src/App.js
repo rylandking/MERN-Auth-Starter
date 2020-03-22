@@ -1,10 +1,16 @@
 import React, { Fragment } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Navbar from './components/layout/Navbar';
 import './App.css';
 
 const App = () => (
-  <Fragment>
-    <h1>App</h1>
-  </Fragment>
+  <Router>
+    <Fragment>
+      <div class='min-h-screen bg-white'>
+        <Navbar />
+      </div>
+    </Fragment>
+  </Router>
 );
 
 export default App;
