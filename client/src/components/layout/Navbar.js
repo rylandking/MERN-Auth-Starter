@@ -4,10 +4,7 @@ import { Link } from 'react-router-dom';
 export const Navbar = () => {
   return (
     <div className='relative bg-white overflow-hidden'>
-      <div
-        x-data='{ open: false }'
-        className='relative pt-6 pb-16 md:pb-20 lg:pb-24 xl:pb-32'
-      >
+      <div x-data='{ open: false }' className='relative pt-6 pb-4'>
         <nav className='relative max-w-screen-xl mx-auto flex items-center justify-between px-4 sm:px-6'>
           <div className='flex items-center flex-1'>
             <div className='flex items-center justify-between w-full md:w-auto'>
