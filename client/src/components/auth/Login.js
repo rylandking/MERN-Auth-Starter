@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { setAlert } from '../../actions/alert';
 import { login } from '../../actions/auth';
 import PropTypes from 'prop-types';
+import Alert from '../layout/Alert';
 
 const Login = ({ login, isAuthenticated, setAlert }) => {
   const [formData, setFormData] = useState({
@@ -95,12 +96,17 @@ const Login = ({ login, isAuthenticated, setAlert }) => {
                 </span>
               </div>
               <div className='text-sm w-full flex justify-center mt-6 leading-5'>
-                <Link
-                  to='/register'
-                  className='font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150'
-                >
-                  Don't have an account?
-                </Link>
+                <div>
+                  <Alert />
+                  <span className="block">
+                    <Link
+                      to='/register'
+                      className='font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150'
+                    >
+                      Don't have an account?
+                    </Link>
+                  </span>
+                </div>
               </div>
             </form>
           </div>

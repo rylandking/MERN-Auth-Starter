@@ -7,12 +7,11 @@ import Login from './components/auth/Login';
 import Accounts from './components/layout/Accounts';
 import Transactions from './components/layout/Transactions';
 import Trends from './components/layout/Trends';
-import Alert from './components/layout/Alert';
+import { loadUser } from './actions/auth';
+import setAuthToken from './utils/setAuthToken';
 // Redux
 import { Provider } from 'react-redux';
 import store from './store';
-import { loadUser } from './actions/auth';
-import setAuthToken from './utils/setAuthToken';
 
 import './App.css';
 
@@ -33,7 +32,6 @@ const App = () => {
             <Navbar />
             <Route exact path='/' component={Landing} />
             <section>
-              <Alert />
               <Switch>
                 <Route exact path='/register' component={Register} />
                 <Route exact path='/login' component={Login} />

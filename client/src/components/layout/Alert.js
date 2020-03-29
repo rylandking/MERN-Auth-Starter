@@ -6,9 +6,9 @@ const Alert = ({ alerts }) =>
   alerts !== null &&
   alerts.length > 0 &&
   alerts.map(alert => (
-    <div key={alert.id} className={`alert ${alert.alertBackground}`}>
+    <span key={alert.id} className={`block font-medium ${alert.alertTextColor} mb-4`}>
       {alert.msg}
-    </div>
+    </span>
   ));
 
 Alert.propTypes = {

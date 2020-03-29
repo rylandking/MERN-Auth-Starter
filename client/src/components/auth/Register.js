@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 import { setAlert } from '../../actions/alert';
 import { register } from '../../actions/auth';
+import Alert from '../layout/Alert';
 import PropTypes from 'prop-types';
 
 const Register = ({ setAlert, register, isAuthenticated }) => {
@@ -116,12 +117,17 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                 </span>
               </div>
               <div className='text-sm w-full flex justify-center mt-6 leading-5'>
-                <Link
-                  to='/login'
-                  className='font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150'
-                >
-                  Already have an account?
-                </Link>
+                <div>
+                  <Alert />
+                  <span className="block">
+                    <Link
+                      to='/login'
+                      className='font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150'
+                    >
+                      Already have an account?
+                    </Link>
+                  </span>
+                </div>
               </div>
             </form>
           </div>
