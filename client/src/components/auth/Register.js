@@ -20,8 +20,6 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
   const onSubmit = async e => {
     e.preventDefault();
     register({ name, email, password });
-
-    setAlert('Success', 'bg-green-400', 3000);
   };
 
   if (isAuthenticated) {
@@ -143,4 +141,4 @@ const mapStateToProps = state => ({
   isAuthenticated: state.auth.isAuthenticated
 });
 
-export default connect(mapStateToProps, { setAlert, register })(Register);
+export default connect(mapStateToProps, { register, setAlert })(Register);
