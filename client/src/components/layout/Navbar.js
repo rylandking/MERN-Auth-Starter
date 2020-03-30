@@ -1,7 +1,80 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { logout } from '../../actions/auth';
 
-export const Navbar = () => {
+export const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
+  const authLinks = (
+    <Fragment>
+      <span className='inline-flex rounded-md shadow-md'>
+        <span className='inline-flex rounded-md shadow-xs'>
+          <Link
+            to='/accounts'
+            className='inline-flex items-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-green-400 hover:bg-green-500 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out'
+          >
+            Accounts
+        </Link>
+        </span>
+      </span>
+      <span className='ml-3 inline-flex rounded-md shadow-md'>
+        <span className='inline-flex rounded-md shadow-xs'>
+          <Link
+            to='/transactions'
+            className='inline-flex items-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-green-400 hover:bg-green-500 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out'
+          >
+            Transactions
+        </Link>
+        </span>
+      </span>
+      <span className='ml-3 inline-flex rounded-md shadow-md'>
+        <span className='inline-flex rounded-md shadow-xs'>
+          <Link
+            to='/trends'
+            className='inline-flex items-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-green-400 hover:bg-green-500 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out'
+          >
+            Trends
+        </Link>
+        </span>
+      </span>
+      <span className='ml-3 inline-flex rounded-md shadow-md'>
+        <span className='inline-flex rounded-md shadow-xs'>
+          <Link
+            onClick={logout} to='#!'
+            className='inline-flex items-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-green-400 bg-white hover:bg-green-50 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out'
+          >
+            Logout
+        </Link>
+        </span>
+      </span>
+    </Fragment>
+  );
+
+  const guestLinks = (
+    <Fragment>
+      <span className='inline-flex rounded-md shadow-md'>
+        <span className='inline-flex rounded-md shadow-xs'>
+          <Link
+            to='/register'
+            className='inline-flex items-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-green-400 bg-white hover:bg-green-50 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out'
+          >
+            Sign up
+        </Link>
+        </span>
+      </span>
+      <span className='ml-3 inline-flex rounded-md shadow-md'>
+        <span className='inline-flex rounded-md shadow-xs'>
+          <Link
+            to='/login'
+            className='inline-flex items-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-green-400 bg-white hover:bg-green-50 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out'
+          >
+            Log in
+        </Link>
+        </span>
+      </span>
+    </Fragment>
+  );
+
   return (
     <div className='relative bg-white overflow-hidden'>
       <div x-data='{ open: false }' className='relative pt-6 pb-4'>
@@ -34,56 +107,7 @@ export const Navbar = () => {
             </div>
           </div>
           <div className='hidden md:block text-right'>
-            <span className='inline-flex rounded-md shadow-md'>
-              <span className='inline-flex rounded-md shadow-xs'>
-                <Link
-                  to='/accounts'
-                  className='inline-flex items-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-green-400 hover:bg-green-500 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out'
-                >
-                  Accounts
-                </Link>
-              </span>
-            </span>
-            <span className='ml-3 inline-flex rounded-md shadow-md'>
-              <span className='inline-flex rounded-md shadow-xs'>
-                <Link
-                  to='/transactions'
-                  className='inline-flex items-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-green-400 hover:bg-green-500 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out'
-                >
-                  Transactions
-                </Link>
-              </span>
-            </span>
-            <span className='ml-3 inline-flex rounded-md shadow-md'>
-              <span className='inline-flex rounded-md shadow-xs'>
-                <Link
-                  to='/trends'
-                  className='inline-flex items-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-green-400 hover:bg-green-500 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out'
-                >
-                  Trends
-                </Link>
-              </span>
-            </span>
-            <span className='ml-3 inline-flex rounded-md shadow-md'>
-              <span className='inline-flex rounded-md shadow-xs'>
-                <Link
-                  to='/register'
-                  className='inline-flex items-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-green-400 bg-white hover:bg-green-50 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out'
-                >
-                  Sign up
-                </Link>
-              </span>
-            </span>
-            <span className='ml-3 inline-flex rounded-md shadow-md'>
-              <span className='inline-flex rounded-md shadow-xs'>
-                <Link
-                  to='/login'
-                  className='inline-flex items-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-green-400 bg-white hover:bg-green-50 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out'
-                >
-                  Log in
-                </Link>
-              </span>
-            </span>
+            {!loading && (<Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>)}
           </div>
         </nav>
       </div>
@@ -91,4 +115,13 @@ export const Navbar = () => {
   );
 };
 
-export default Navbar;
+Navbar.propTypes = {
+  logout: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired
+}
+
+const mapStateToProps = state => ({
+  auth: state.auth
+})
+
+export default connect(mapStateToProps, { logout })(Navbar);
