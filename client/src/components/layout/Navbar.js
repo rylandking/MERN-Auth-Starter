@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logout } from '../../actions/auth';
-// import logo from '../../../public/img/moolah_logo_purple_on_white.png';
+
 
 export const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
+
+
   const authAuthLinks = (
     <Fragment>
       <span className="ml-3 inline-flex rounded-md shadow-md">
@@ -40,14 +42,14 @@ export const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authNavLinks = (
     <Fragment>
       <div className="flex h-16">
-        <div class="hidden sm:ml-6 sm:flex">
-          <Link to="/trends" class="inline-flex items-center px-1 pt-1 border-b-2 border-indigo-500 text-sm font-medium leading-5 text-gray-900 focus:outline-none focus:border-indigo-700 transition duration-150 ease-in-out">
+        <div className="hidden sm:ml-6 sm:flex">
+          <Link to="/trends" className="inline-flex items-center px-1 pt-1 border-b-2 border-indigo-500 text-sm font-medium leading-5 text-gray-900 focus:outline-none focus:border-indigo-700 transition duration-150 ease-in-out">
             Accounts
           </Link>
-          <Link to="/transactions" class="ml-8 inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
+          <Link to="/transactions" className="ml-8 inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
             Transactions
           </Link>
-          <Link to="/trends" class="ml-8 inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
+          <Link to="/trends" className="ml-8 inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
             Trends
           </Link>
         </div>
