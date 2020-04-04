@@ -28,7 +28,7 @@ router.post(
   '/',
   [
     check('email', 'Please use a valid email').isEmail(),
-    check('password', 'Please enter a password').exists()
+    check('password', 'Please enter a password').exists(),
   ],
   async (req, res) => {
     const errors = validationResult(req);
@@ -60,8 +60,8 @@ router.post(
       // Return jsonwebtoken
       const payload = {
         user: {
-          id: user.id
-        }
+          id: user.id,
+        },
       };
 
       jwt.sign(
